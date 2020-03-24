@@ -1,10 +1,8 @@
 const express = require('express');
 
-const app = express();
+// Desacoplando o módulo de rotas do express em um nova variável
+const routes = express.Router();
 
-// Isso vai dizer ao express que o body da requisição vai 
-// ser entendida com um JSON.
-app.use(express.json());
 
 /**
  * Rota / recurso
@@ -18,8 +16,7 @@ app.use(express.json());
  * PUT:    Alterar uma informação no backend
  * DELETE: Deletar uma informação no backend
  */
-
-app.get('/users/:id', (req, res) => {
+routes.get('/users/:id', (req, res) => {
     const params = req.params;
 
     console.log(params);
@@ -30,7 +27,7 @@ app.get('/users/:id', (req, res) => {
     });
 });
 
-app.post('/users', (req, res) => {
+routes.post('/users', (req, res) => {
     const body = req.body;
 
     console.log(body);
@@ -41,4 +38,4 @@ app.post('/users', (req, res) => {
     });
 });
 
-app.listen(3333);
+module.exports = routes;
