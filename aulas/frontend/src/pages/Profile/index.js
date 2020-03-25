@@ -11,7 +11,7 @@ export default function Profile() {
         <div className="profile-container">
             <header>
                 <img src={logoImg} alt="Be The Hero" />
-                <span>Bem vinda APAD</span>
+                <span>Bem vinda a APAD</span>
 
                 <Link className="button" to="/incidents/new"> Cadastrar novo caso</Link>
                 <button type="button"> 
