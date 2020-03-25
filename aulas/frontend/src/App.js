@@ -1,27 +1,14 @@
-import React , { useState }from 'react';
+import React from 'react';
 
-import Header from './Header';
+import Logon from './pages/Logon';
+
+import './global.css';
 
 function App() {
 
-  // Retorna um array do tipo
-  // [valorAtual, function atualizacao()]
-  const [counter, setCounter] = useState(0); //inicializar
-
-  function increment()
-  {
-    setCounter(counter + 1);
-  }
-
-
   return (
-    <div>
-      <Header>
-        Contador: {counter}
-      </Header>
-      <button onClick={increment}>increment</button>
-    </div>
+    <Logon />
   );
 }
 
-export default App;
+export default App;  
