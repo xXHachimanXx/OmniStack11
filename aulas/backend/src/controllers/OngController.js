@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const generateUniqueId = require('../utils/GenerateUniqueId');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
 
         // Gerar 4 bytes aleatórios, converter para string e retornar em 
         // forma de hexadecimal
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generateUniqueId();
 
         // Como o insert pode demorar um pouco, então colocamos um 'await'
         // para que a execução espere até que a operação seja finalizada.

@@ -13,6 +13,20 @@ module.exports = {
     useNullAsDefault: true,
   },
 
+  // O ambiente de teste (abaixo) utilizado será muito parecido 
+  // com o de desenvolvimento (sim foi um ctrc, ctrlv). A única 
+  // diferença é que mudamos o filename das migrations para test.sqlite
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/test.sqlite' // <- AQUI ;)
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true,
+  },
+
   staging: {
     client: 'postgresql',
     connection: {
